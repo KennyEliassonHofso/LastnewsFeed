@@ -38,7 +38,8 @@ public class Database {
         }
         return articles;
     }
-        public boolean createArticle (Article article) {
+
+    public boolean createArticle (Article article) {
         try {
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO news (title, content, imageURL1, imageURL2(?, ?, ?, ?)");
             stmt.setString(1,article.getTitle());
@@ -47,14 +48,13 @@ public class Database {
             stmt.setString(4,article.getImageURL2());
             ResultSet rs = stmt.executeQuery();
         }
-            catch (SQLException throwables) {
+        catch (SQLException throwables) {
             throwables.printStackTrace();
-
-            }
-            return true;
         }
+        return true;
+    }
 
-        public boolean updateArticle(Article article) {
+    public boolean updateArticle(Article article) {
         try {
             PreparedStatement stmt = conn.prepareStatement("UPDATE news SET content = ? , title = ?, imageURL1 = ?, imageURL2 = ? WHERE id = ?");
             stmt.setString(1,article.getTitle());
@@ -69,23 +69,19 @@ public class Database {
             e.printStackTrace();
             return false;
         }
+    }
 
+    public boolean deleteArticle(Article article) {
+        try {
+            PreparedStatement stmt = conn.prepareStatement("DELETE FROM news WHERE id = ?");
+            stmt.setInt(1, article.getId());
+            stmt.executeUpdate();
+            return true;
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
         }
-
-            public boolean deleteArticle(Article article) {
-                try {
-                    PreparedStatement stmt = conn.prepareStatement("DELETE FROM news WHERE id = ?");
-                    stmt.setInt(1, article.getId());
-                    stmt.executeUpdate();
-                    return true;
-
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                    return false;
-                }
-
-                }
-
-
-            }
+    }
+}
 
