@@ -1,7 +1,5 @@
 package com.newsFeed;
 
-import java.util.List;
-
 public class Article {
 
     private String title;
@@ -10,7 +8,9 @@ public class Article {
     private String imageURL2;
     private int id;
 
-    public Article(String title, String content, String imageURL1, String imageURL2) {
+    public Article() { }
+
+    public Article (String title, String content, String imageURL1, String imageURL2) {
 
         this.title = title;
         this.content = content;
@@ -23,7 +23,7 @@ public class Article {
 
     public void setTitle(String title) { this.title = title; }
 
-    public String getContent() { return title; }
+    public String getContent() { return content; }
 
     public void setContent(String content) { this.content = content; }
 
@@ -38,8 +38,6 @@ public class Article {
     public int getId() { return id; }
 
     public void setId (int id) { this.id = id; }
-
-
 
 }
 

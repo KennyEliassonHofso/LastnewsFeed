@@ -5,7 +5,6 @@ import express.Express;
 import express.middleware.Middleware;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
@@ -15,6 +14,7 @@ public class Main {
 
         Express app = new Express();
         Database db = new Database();
+
 
         app.post("/article", (request, response) -> {
             Article article = (Article) request.getBody(Article.class);
@@ -29,7 +29,6 @@ public class Main {
 
         app.delete("/articles", (request, response) -> {
             Article articles = (Article) request.getBody(Article.class);
-            int article = articles.getId();
             response.json(db.deleteArticle(articles));
 
         });

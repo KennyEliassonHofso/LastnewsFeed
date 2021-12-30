@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My newsFeed</title>
+    <title>NewsFeed</title>
     <link rel="stylesheet" href="/styles.css">
+    <script>src="/main.js"</script>
+
 </head>
 <body>
-    <a href="">Home</a>
-    <a href="/oldNews.html">OldNews</a>
-    <h1>My newsFeed</h1>
+        <a href="/">News</a>
+        <a href="create.html">Create Article</a>
+        <h1>My NewsFeed</h1>
+
+        <form onsubmit="createArticle(event)">
+        <h3>Create Article</h3>
+        <input id="title" required type="text" placeholder="title">
+        <textarea id="content" required placeholder="content" cols="30" rows="20"></textarea>
+        <input type="file" accept="image/*" placeholder="select image">
+        <button type="submit">Create <Article></button> 
+        
+        </form>
+
+        <br>
+        <br>
+    
+        <ul id="article-list"></ul>
+
 </body>
 </html>

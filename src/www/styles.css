@@ -1,3 +1,36 @@
 body {
     text-align: center;
+    font-family: Helvetica;
+}
+
+img {
+    width: 100%;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 5px 0;
+}
+
+#article-list {
+    list-style: none;
+    padding: 0;
+}
+
+#article-list > li {
+    max-width: 400px;
+    margin: 5px auto;
+    padding-bottom: 15px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 gray;
+}
+
+#article-list > li > img {
+    border-radius: 20px 20px 0px 0px;
 }
