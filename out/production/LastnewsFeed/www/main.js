@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 let articles = [];
 getArticles()
 
@@ -58,7 +59,8 @@ let imageUrl = await uploadResult.text();
     let article = {
             title: titleInput.value,
             content: contentInput.value,
-            imageUrl: imageUrl
+            imageURL1: imageURL1,
+            imageUrl2: imageUrl2
         }
 
         let result = await fetch("/articles", {
